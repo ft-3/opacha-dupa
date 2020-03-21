@@ -5,9 +5,13 @@ def main():
     print("---------------------")
     for v in game.vertices:
         print(f"Neighbors of {v}:", end=" ")
-        for neigh in game.vertices[v]:
-            print(neigh, end=" ")
+        for neighbor in game.vertices[v]:
+            print(neighbor, end=" ")
         print()
+        for neighbor in game.vertices[v]:
+            print(game.weights[v][neighbor], end=" ")
+        print()
+
     print("---------------------")
 
 
