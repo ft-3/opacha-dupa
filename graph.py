@@ -13,7 +13,7 @@ from random import randint
 class graph:
     def __init__(self, size=5):
         # Generate random graph
-        g = erdos_renyi_graph(10, 0.5)
+        g = erdos_renyi_graph(size, 0.5)
 
         # Create our basic data structures
         self.vertices = {"v"+str(num): [] for num in g.nodes}

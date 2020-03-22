@@ -1,7 +1,12 @@
 import graph
 
+from flask import Flask,render_template, request,jsonify,Response
+
+app = Flask(__name__)
+
+@app.route('/', methods = ['GET'])
 def main():
-    game = graph.graph()
+    game = graph.graph(15)
     print("---------------------")
     for v in game.vertices:
         print(f"Neighbors of {v}:", end=" ")
@@ -13,8 +18,9 @@ def main():
         print()
 
     print("---------------------")
+    return render_template("home.html")
 
 
 
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=8080, debug=True)
